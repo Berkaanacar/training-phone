@@ -6,11 +6,11 @@
     <button type="button" name="send">Gönder</button>
     <span id="result"></span>
 </div>
-@endsection
+@stop
 @section('script')
 <script type="text/javascript">
     $('button[name="send"]').click(function(){
         $('#result').html($('input[name="name"]').val());
     })
 </script>
-@endsection
+@stop
