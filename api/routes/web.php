@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\BlogController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -21,6 +22,4 @@ Route::post('/', function () {
     return view('pages.index');
 });
 
-Route::get('/user', function () {
-    return view('home');
-});
+Route::get('/blog', [BlogController::class, 'index']);
