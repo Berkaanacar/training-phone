@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\ContactController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
@@ -18,6 +19,5 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
     return $request->user();
 });
 
-Route::middleware('api')->get('/blog', function (Request $request) {
-    return response()->json(["name"=>"Net","surname"=>"Adım"]);
-});
+Route::middleware('api')->post('/contact/new', [ContactController::class, 'store']);
+Route::middleware('api')->post('/contact/update/{id}', [ContactController::class, 'update']);

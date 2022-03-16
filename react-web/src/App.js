@@ -6,7 +6,10 @@ const axios = require('axios');
 function App() {
     const [user, setUser] = useState([]);
     useEffect(() => {
-        axios.get('http://127.0.0.1:8000/api/blog')
+        axios.post('http://127.0.0.1:8000/api/contact/new', {
+            "name": "React Native",
+            "phone": "12345"
+        })
             .then(function (response) {
                 // handle success
                 console.log(response.data);
